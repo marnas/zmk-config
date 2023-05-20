@@ -2,10 +2,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: nicell
+      url-base: https://github.com/Nicell
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: nicell
+      revision: nice-view-custom-screen
       import: app/west.yml
   self:
     path: config
