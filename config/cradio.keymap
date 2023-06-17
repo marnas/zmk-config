@@ -20,6 +20,18 @@
 		};
 	};
 
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
 	keymap {
     	compatible = "zmk,keymap";
 
@@ -28,9 +40,9 @@
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
               &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y       &kp BSPC  
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-              &kp A         &kp R         &kp S         &kp T         &kp G             &kp M         &kp N         &kp E         &kp I         &kp O    
+          &hm LCTRL A    &hm LGUI R    &hm LALT S   &hm LSHIFT T      &kp G             &kp M     &hm LSHIFT N   &hm LALT E    &hm LGUI I   &hm LCTRL O
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-              &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H       &kp COMMA  &mt LCTRL DOT &mt LSHFT FSLH
+              &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H       &kp COMMA      &kp DOT      &kp FSLH
      // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
                                                     &mt LALT TAB  &mt LGUI ESC      &lt 1 SPACE    &lt 2 RET
      //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
